@@ -1,6 +1,16 @@
 $(document).ready(function(){
 
-var topics = ["paying bills","responsibility","old","rent","metabolism","job hunting","millennials","life crisis","mature","moving out"];
+var topics = ["paying bills","responsibility","old","rent","metabolism","job hunting","millennials","weekend","mature","moving out"];
+
+    renderButtons();
+
+    $("#submitbutton").on("click",function(){
+        var userInput = $("#searchbox").val();
+        //change push to insert at beginning
+        topics.push(userInput);
+        renderButtons();
+        console.log(topics);
+    })
 
     function renderButtons () {
         $(".buttons-area").empty();
@@ -9,19 +19,12 @@ var topics = ["paying bills","responsibility","old","rent","metabolism","job hun
             var button = $("<button class='topic'>");
             button.text(topics[i]);
             button.attr("data-name",topics[i]);
-            button.css("margin","5px");
             $(".buttons-area").append(button);
         }
     }
-    renderButtons();
-
-    $("#submitbutton").on("click",function(){
-        var userInput = $("#searchbox").val();
-        topics.push(userInput);
-        renderButtons();
-    })
 
     $(".topic").on("click",function(){
+        console.log(this);
         $(".giphy-area").empty()
         var keyword = $(this).attr("data-name");
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + encodeURI(keyword) +"&api_key=I7XQRE2FWykvdqgIAlYPDmWounP17N5s&limit=10";
