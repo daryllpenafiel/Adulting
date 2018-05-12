@@ -1,9 +1,19 @@
+
 .container {
     text-align: center;
-
+    font-size: 20px;
 }
 
 .search-area {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
+}
+
+.display {
+    width: 
+}
+
+.header h1 {
+    font-family: 'Concert One', cursive;
+    font-size: 50px;
 }
