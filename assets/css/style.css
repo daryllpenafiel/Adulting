@@ -1,4 +1,10 @@
+body {
+    background-color: black;
+}
 
+.topic {
+    border-radius: 6px;
+}
 .container {
     text-align: center;
     font-size: 20px;
@@ -9,11 +15,9 @@
     margin: 0 auto;
 }
 
-.display {
-    width: 
-}
 
-.header h1 {
+.header h3 {
     font-family: 'Concert One', cursive;
-    font-size: 50px;
+    font-size: 54px;
+    color: white;
 }

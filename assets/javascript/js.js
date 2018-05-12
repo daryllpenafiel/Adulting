@@ -1,8 +1,9 @@
 $(document).ready(function(){
 
-var topics = ["paying bills","responsibility","grown up","getting old","metabolism","leftovers","job hunting","millennials","life crisis","mature"];
+var topics = ["paying bills","responsibility","old","rent","metabolism","job hunting","millennials","life crisis","mature","moving out"];
 
     function renderButtons () {
+        $(".buttons-area").empty();
         l = topics.length;
         for (i=0;i<l; i++) {
             var button = $("<button class='topic'>");
@@ -13,6 +14,12 @@ var topics = ["paying bills","responsibility","grown up","getting old","metaboli
         }
     }
     renderButtons();
+
+    $("#submitbutton").on("click",function(){
+        var userInput = $("#searchbox").val();
+        topics.push(userInput);
+        renderButtons();
+    })
 
     $(".topic").on("click",function(){
         $(".giphy-area").empty()
@@ -26,7 +33,8 @@ var topics = ["paying bills","responsibility","grown up","getting old","metaboli
         }).then(function(response){
             var result = response.data;
                     
-                for (i=0;i<response.data.length;i++){
+                r = response.data.length;
+                for (i=0;i<r;i++){
                     var imgURL = result[i].images.original.url;
                     var displayIMG = $("<img class='display'>");
                     displayIMG.attr("src",imgURL);
