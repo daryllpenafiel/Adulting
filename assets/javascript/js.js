@@ -4,32 +4,12 @@ var topics = ["paying bills","responsibility","old","rent","metabolism","job hun
 
     renderButtons();
 
-    $("#submitbutton").on("click",function(){
-        var userInput = $("#searchbox").val();
-        //change push to insert at beginning
-        topics.push(userInput);
-        renderButtons();
-        console.log(topics);
-    })
-
-    function renderButtons () {
-        $(".buttons-area").empty();
-        l = topics.length;
-        for (i=0;i<l; i++) {
-            var button = $("<button class='topic'>");
-            button.text(topics[i]);
-            button.attr("data-name",topics[i]);
-            $(".buttons-area").append(button);
-        }
-    }
-
-    $(".topic").on("click",function(){
+    $(document).on("click",".topic",function(){
         console.log(this);
-        $(".giphy-area").empty()
+        $(".giphy-area").empty();
         var keyword = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + encodeURI(keyword) +"&api_key=I7XQRE2FWykvdqgIAlYPDmWounP17N5s&limit=10";
         console.log(keyword);
-        console.log(queryURL);
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + encodeURI(keyword) +"&api_key=I7XQRE2FWykvdqgIAlYPDmWounP17N5s&limit=10";
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -46,6 +26,27 @@ var topics = ["paying bills","responsibility","old","rent","metabolism","job hun
             }
         })
     })
+
+    $("#submitbutton").on("click",function(){
+        var userInput = $("#searchbox").val();
+        topics.unshift(userInput);
+        console.log("submitbutton");
+        renderButtons();
+    })
+
+    function renderButtons () {
+        $(".buttons-area").empty();
+        l = topics.length;
+        for (i=0;i<l; i++) {
+            var button = $("<button class='topic'>");
+            button.text(topics[i]);
+            button.attr("data-name",topics[i]);
+            button.o
+            $(".buttons-area").append(button);
+            console.log("buttons rendered")
+        }
+    }
+
 
 });
 
