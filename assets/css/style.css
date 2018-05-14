@@ -1,5 +1,14 @@
 body {
+    background-color: darkcyan;
+    box-sizing: border-box;
+}
+
+.header{
     background-color: black;
+    padding: 10px 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-bottom: 3px solid gainsboro;
 }
 
 .topic {
@@ -10,9 +19,15 @@ body {
     font-size: 20px;
 }
 
+.search-row{
+    border: 3px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: black;
+}
 .search-area {
-    width: 90%;
-    margin: 0 auto;
+    padding: 5px 0px;
+    margin: 5px auto;
 }
 
 .header h3 {
@@ -22,10 +37,37 @@ body {
 }
 
 #submitbutton {
-    background-color: green;
+    background-color: seagreen;
     margin: 10px;
 }
 
 .topic {
     margin: 5px;
+}
+
+.pg {
+    color: black;
+    text-decoration: underline cyan;
+}
+
+.block {
+    margin: auto;
+    float: auto;
+}
+
+.block {
+    background-color: black;
+}
+
+#searchbox {
+    margin-top: 10px;
+}
+
+.giphy-area {
+    background-color: linen;
+    border-radius: 8px;
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+    border: 2px solid gainsboro;
 }
