@@ -1,5 +1,5 @@
 body {
-    background-color: darkcyan;
+    background-color: steelblue;
     box-sizing: border-box;
 }
 
@@ -42,21 +42,22 @@ body {
 }
 
 .topic {
-    margin: 5px;
+    margin: 10px;
 }
 
 .pg {
     color: black;
-    text-decoration: underline cyan;
+    font-size: 18px;
+    display: block;
+    text-align: center;
 }
 
-.block {
-    margin: auto;
-    float: auto;
-}
-
-.block {
-    background-color: black;
+.col {
+    display: inline-block;
+    text-align: center;
+    padding: 3px;
+    background-color: white;
+    margin: 10px 15px;
 }
 
 #searchbox {
@@ -64,10 +65,11 @@ body {
 }
 
 .giphy-area {
-    background-color: linen;
+    background-color: black;
     border-radius: 8px;
-    margin: auto;
-    text-align: center;
     font-size: 15px;
     border: 2px solid gainsboro;
+    text-align: center;
+    width: 78%;
+    margin: auto;
 }

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var topics = ["bills","responsibility","feeling old","rent","metabolism","job hunting","millennials","weekend","mature","moving out","socializing","adulting"];
+    var topics = ["bills","responsibility","feeling old","rent","sleep","job hunting","millennials","weekend","mature","moving out","socializing","adulting"];
 
     renderButtons();
 
@@ -20,16 +20,17 @@ $(document).ready(function(){
                     
                 r = response.data.length;
                 for (i=0;i<r;i++){
-                    var imgURL = result[i].images.looping.mp4;
+                    var imgURL = result[i].images.original.mp4;
+                    var displaypg = $("<span class='pg'>");
                     var displayIMG = $("<video class='display'>");
                     var pgURL = result[i].rating;
-                    var displaypg = $("<p class='pg'>");
                     displaypg.text("rating: " + pgURL)
                     displayIMG.attr("src",imgURL);
                     displayIMG.css("margin","5px 5px 0px 5px");
-                    $(".giphy-area").append(displayIMG);
-                    $(".giphy-area").append(displaypg);
-
+                    var block = $("<div class='col'>");
+                    block.append(displaypg);
+                    block.append(displayIMG);
+                    $(".giphy-area").append(block);
                     
             }
         })
@@ -68,7 +69,6 @@ $(document).ready(function(){
             var button = $("<button class='topic'>");
             button.text(topics[i]);
             button.attr("data-name",topics[i]);
-            button.o
             $(".buttons-area").append(button);
             console.log("buttons rendered")
         }
